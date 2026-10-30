@@ -1,0 +1,110 @@
+.pedidos-listos {
+  margin-bottom: 1.2rem;
+  padding: 1rem 1.2rem;
+  background-color: var(--color-success-bg);
+  border: 1.5px solid var(--color-salvia);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  animation: pedidos-listos-aparece 0.4s ease;
+}
+
+.pedidos-listos-titulo {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin: 0 0 0.8rem;
+  font-size: 1.05rem;
+  color: var(--color-success);
+}
+
+.pedidos-listos-campana {
+  transform-origin: 50% 0;
+  animation: campana 1.6s ease-in-out infinite;
+}
+
+.pedidos-listos-lista {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.pedido-listo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.7rem 0.9rem;
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  animation: pedidos-listos-aparece 0.4s ease;
+}
+
+.pedido-listo-info {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.2rem 0.7rem;
+}
+
+.pedido-listo-mesa {
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+.pedido-listo-orden {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+}
+
+.pedido-listo-items {
+  flex-basis: 100%;
+  margin: 0.2rem 0 0;
+  padding: 0;
+  list-style: none;
+  font-size: 0.9rem;
+}
+
+.pedido-listo-btn {
+  flex-shrink: 0;
+}
+
+.pedido-listo-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+@keyframes pedidos-listos-aparece {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes campana {
+  0%, 60%, 100% { transform: rotate(0deg); }
+  10% { transform: rotate(14deg); }
+  20% { transform: rotate(-12deg); }
+  30% { transform: rotate(8deg); }
+  40% { transform: rotate(-6deg); }
+  50% { transform: rotate(3deg); }
+}
+
+@media (max-width: 480px) {
+  .pedido-listo {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pedidos-listos,
+  .pedido-listo,
+  .pedidos-listos-campana {
+    animation: none;
+  }
+}

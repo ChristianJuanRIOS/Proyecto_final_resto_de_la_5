@@ -1,0 +1,171 @@
+/* ---------- Paleta pastel ---------- */
+.login-page {
+  --login-crema: #fdf5ec;
+  --login-durazno: #f4c6a8;
+  --login-rosa: #ecb8bd;
+  --login-salvia: #bdd1b5;
+  --login-cielo: #bcd3e0;
+  --login-marron: #5b4637;
+  --login-marron-suave: #8a7364;
+  --login-acento: #e9a98b;
+  --login-acento-hover: #e29a79;
+}
+
+/* ---------- Pantalla completa (tapa la navbar en el login) ---------- */
+.login-page {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  overflow: hidden;
+  background-color: var(--login-crema);
+}
+
+/* Fondo difuminado: luces tipo "bokeh" de un salón de restaurante */
+.login-page::before {
+  content: '';
+  position: absolute;
+  inset: 0px;
+  background: url('../assets/fondo-restaurante.jpeg') center / cover no-repeat;
+}
+
+/* Capa suave encima para que el recuadro se lea bien */
+.login-page::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(253, 245, 236, 0.15);
+}
+
+.login-container {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 400px;
+  padding: 2.2rem 2rem 2rem;
+  text-align: center;
+  background: rgba(255, 250, 244, 0.82);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  border-radius: 22px;
+  box-shadow: 0 18px 45px rgba(122, 84, 60, 0.18);
+}
+
+.login-container h1 {
+  margin: 0;
+  font-size: 1.6rem;
+  color: var(--login-marron);
+}
+
+.login-subtitle {
+  margin: 0.3rem 0 1.6rem;
+  font-size: 0.95rem;
+  color: var(--login-marron-suave);
+}
+
+.login-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+/* ---------- Campos ---------- */
+.login-field {
+  position: relative;
+}
+
+.login-field i {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--login-marron-suave);
+  pointer-events: none;
+}
+
+.login-field input {
+  width: 100%;
+  padding: 0.8rem 1rem 0.8rem 2.6rem;
+  font-family: inherit;
+  font-size: 1rem;
+  color: var(--login-marron);
+  background: #fffdfa;
+  border: 1.5px solid #ead9cb;
+  border-radius: 12px;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.login-field input::placeholder {
+  color: #b9a597;
+}
+
+.login-field input:focus {
+  border-color: var(--login-acento);
+  box-shadow: 0 0 0 4px rgba(233, 169, 139, 0.25);
+}
+
+/* ---------- Botón ---------- */
+.login-button {
+  margin-top: 0.4rem;
+  padding: 0.85rem 1rem;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #4a3428;
+  background: var(--login-acento);
+  border-radius: 12px;
+  transition: background-color 0.2s, transform 0.1s;
+}
+
+.login-button:hover {
+  background: var(--login-acento-hover);
+}
+
+.login-button:active {
+  transform: scale(0.98);
+}
+
+/* ---------- Error ---------- */
+.login-error {
+  margin: 0;
+  padding: 0.6rem 0.8rem;
+  font-size: 0.9rem;
+  color: #8c3b3b;
+  background: #f9dcdc;
+  border-radius: 10px;
+}
+
+html[data-theme='dark'] .login-page {
+  --login-marron: #f6e3d3;
+  --login-marron-suave: #bba898;
+}
+
+/* Oscurece la foto de fondo */
+html[data-theme='dark'] .login-page::after {
+  background: rgba(18, 12, 9, 0.6);
+}
+
+html[data-theme='dark'] .login-container {
+  background: rgba(42, 34, 29, 0.85);
+  border-color: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.5);
+}
+
+html[data-theme='dark'] .login-field input {
+  background: #221b17;
+  border-color: #44372e;
+  color: #efe3d7;
+}
+
+html[data-theme='dark'] .login-field input::placeholder {
+  color: #8a7a6c;
+}
+
+html[data-theme='dark'] .login-error {
+  color: #f2a0a6;
+  background: #3d2528;
+}

@@ -1,0 +1,337 @@
+.admin-pagos {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.admin-pagos-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.admin-pagos-header h2 {
+  margin: 0;
+}
+
+.pagos-filtros {
+  display: flex;
+  gap: 0.25rem;
+  background: #f0f0f0;
+  padding: 0.25rem;
+  border-radius: 6px;
+}
+
+.pagos-filtro {
+  padding: 0.4rem 0.8rem;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  color: #666;
+  font-weight: 500;
+  transition: all 0.15s;
+}
+
+.pagos-filtro:hover {
+  color: #333;
+}
+
+.pagos-filtro.activa {
+  background: white;
+  color: #0066cc;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+}
+
+.pagos-vacio {
+  padding: 2rem;
+  text-align: center;
+  color: #999;
+  background: #f8f8f8;
+  border-radius: 6px;
+}
+
+.pagos-tabla {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.pagos-tabla th,
+.pagos-tabla td {
+  padding: 0.6rem 0.75rem;
+  text-align: left;
+  border-bottom: 1px solid #eee;
+  font-size: 0.9rem;
+}
+
+.pagos-tabla th {
+  background: #f7f7f7;
+  font-weight: 600;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  color: #666;
+  letter-spacing: 0.03em;
+}
+
+.pagos-tabla td.monto {
+  font-variant-numeric: tabular-nums;
+  font-weight: 600;
+  text-align: right;
+}
+
+.pagos-tabla td.fecha,
+.pagos-tabla td.referencia {
+  font-size: 0.8rem;
+  color: #888;
+  font-variant-numeric: tabular-nums;
+}
+
+.pasarela,
+.estado {
+  display: inline-block;
+  padding: 0.2rem 0.6rem;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+/* Pasarelas (modo claro) */
+.pasarela-tarjeta { background: #e3f2fd; color: #1565c0; }
+.pasarela-mercadopago { background: #fff4e0; color: #f57c00; }
+.pasarela-transferencia { background: #f3e5f5; color: #7b1fa2; }
+
+/* Estados (modo claro) */
+.estado-pendiente { background: #fff3cd; color: #856404; }
+.estado-aprobado { background: #d4edda; color: #155724; }
+.estado-rechazado { background: #f8d7da; color: #721c24; }
+.estado-reembolsado { background: #e2e3e5; color: #383d41; }
+
+/* Filas destacadas por estado */
+.pago-fila.estado-pendiente { background: #fffbf0; }
+.pago-fila.estado-rechazado { background: #fff5f5; }
+
+/* ---------- Acciones (botones) ---------- */
+
+.pagos-tabla td.acciones {
+  display: flex;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+}
+
+.btn-aprobar,
+.btn-reembolsar {
+  padding: 0.3rem 0.7rem;
+  font-size: 0.8rem;
+  border-radius: 4px;
+  cursor: pointer;
+  border: 1px solid;
+  font-weight: 500;
+  transition: all 0.15s;
+}
+
+.btn-aprobar {
+  background: #28a745;
+  color: white;
+  border-color: #28a745;
+}
+
+.btn-aprobar:hover:not(:disabled) {
+  background: #218838;
+  border-color: #1e7e34;
+}
+
+.btn-reembolsar {
+  background: white;
+  color: #dc3545;
+  border-color: #dc3545;
+}
+
+.btn-reembolsar:hover:not(:disabled) {
+  background: #f8d7da;
+}
+
+.btn-aprobar:disabled,
+.btn-reembolsar:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.admin-mensaje {
+  background: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+  border-radius: 4px;
+  padding: 0.75rem 1rem;
+  margin-bottom: 1rem;
+}
+
+.admin-mensaje.error {
+  background: #f8d7da;
+  color: #721c24;
+  border-color: #f5c6cb;
+}
+
+/* Filtros */
+[data-theme="dark"] .pagos-filtros {
+  background: #1f1f1f;
+}
+
+[data-theme="dark"] .pagos-filtro {
+  color: #aaa;
+}
+
+[data-theme="dark"] .pagos-filtro:hover {
+  color: #f0f0f0;
+}
+
+[data-theme="dark"] .pagos-filtro.activa {
+  background: #2a2a2a;
+  color: #4a90d9;
+}
+
+/* Mensaje vacío */
+[data-theme="dark"] .pagos-vacio {
+  background: #1f1f1f;
+  color: #888;
+}
+
+/* Tabla */
+[data-theme="dark"] .pagos-tabla {
+  background: #2a2a2a;
+}
+
+[data-theme="dark"] .pagos-tabla th {
+  background: #1f1f1f;
+  color: #aaa;
+  border-bottom-color: #3a3a3a;
+}
+
+[data-theme="dark"] .pagos-tabla td {
+  color: #e0e0e0;
+  border-bottom-color: #3a3a3a;
+}
+
+[data-theme="dark"] .pagos-tabla td.fecha,
+[data-theme="dark"] .pagos-tabla td.referencia {
+  color: #888;
+}
+
+/* Filas destacadas por estado */
+[data-theme="dark"] .pago-fila.estado-pendiente {
+  background: #3a2f1c;
+}
+
+[data-theme="dark"] .pago-fila.estado-rechazado {
+  background: #3a1c1c;
+}
+
+[data-theme="dark"] .pasarela-tarjeta {
+  background: #1c2a3e;
+  color: #6db0f5;
+}
+
+[data-theme="dark"] .pasarela-mercadopago {
+  background: #3a2f1c;
+  color: #f5c470;
+}
+
+[data-theme="dark"] .pasarela-transferencia {
+  background: #2a1c3a;
+  color: #c490d9;
+}
+
+[data-theme="dark"] .estado-pendiente {
+  background: #3a2f1c;
+  color: #f5c470;
+}
+
+[data-theme="dark"] .estado-aprobado {
+  background: #1c3a28;
+  color: #7ed896;
+}
+
+[data-theme="dark"] .estado-rechazado {
+  background: #3a1c1c;
+  color: #f5b8bd;
+}
+
+[data-theme="dark"] .estado-reembolsado {
+  background: #2a2a2a;
+  color: #c0c0c0;
+}
+
+/* Botones */
+[data-theme="dark"] .btn-reembolsar {
+  background: #2a2a2a;
+  color: #f5b8bd;
+  border-color: #8a3030;
+}
+
+[data-theme="dark"] .btn-reembolsar:hover:not(:disabled) {
+  background: #3a1c1c;
+}
+
+/* Mensajes */
+[data-theme="dark"] .admin-mensaje {
+  background: #1c3a28;
+  color: #b4e8c6;
+  border-color: #2a5a3e;
+}
+
+[data-theme="dark"] .admin-mensaje.error {
+  background: #3a1c1c;
+  color: #f5b8bd;
+  border-color: #5a2a2a;
+}
+
+
+@media (max-width: 768px) {
+  /* Las tablas se vuelven scroll horizontal en mobile */
+  .insumos-tabla,
+  .pagos-tabla,
+  .repartidores-tabla {
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    white-space: nowrap;
+    width: 100%;
+  }
+
+  .insumos-tabla thead,
+  .pagos-tabla thead { display: none; }
+
+  .insumos-tabla tr,
+  .pagos-tabla tr {
+    display: block;
+    margin-bottom: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    padding: 0.5rem;
+  }
+
+  .insumos-tabla td,
+  .pagos-tabla td {
+    display: block;
+    text-align: right;
+    border-bottom: 1px solid #eee;
+    padding: 0.4rem 0;
+  }
+
+  .insumos-tabla td::before,
+  .pagos-tabla td::before {
+    content: attr(data-label);
+    float: left;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    color: #888;
+  }
+}

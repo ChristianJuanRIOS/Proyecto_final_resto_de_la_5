@@ -1,0 +1,109 @@
+.mozo-layout {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 1.5rem;
+  align-items: start;
+}
+
+.mozo-mensaje {
+  background-color: var(--color-success-bg);
+  border: 1px solid var(--color-salvia);
+  color: var(--color-success);
+  border-radius: var(--radius);
+  padding: 0.7rem 1rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.mozo-mensaje.error {
+  background-color: var(--color-danger-bg);
+  border-color: var(--color-danger-border);
+  color: var(--color-danger);
+}
+
+@media (max-width: 700px) {
+  .mozo-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+.mozo-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.mozo-header h1 {
+  margin: 0;
+}
+
+.mozo-header-acciones {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.mozo-header-acciones .btn-primary i {
+  margin-right: 0.4rem;
+}
+
+.btn-secondary {
+  padding: 0.5rem 1rem;
+  background: white;
+  color: #333;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+.btn-secondary:hover {
+  background: #f0f0f0;
+}
+
+[data-theme="dark"] .btn-secondary {
+  background: #2a2a2a;
+  color: #f0f0f0;
+  border-color: #555;
+}
+
+[data-theme="dark"] .btn-secondary:hover {
+  background: #3a3a3a;
+}
+
+/* ===== RESPONSIVE MOZO VIEW ===== */
+
+@media (max-width: 900px) {
+  /* En tablet/mobile, las 2 columnas se vuelven 1 */
+  .mozo-layout {
+    flex-direction: column;
+  }
+
+  .mozo-columna-principal,
+  .mozo-columna-orden {
+    width: 100%;
+  }
+
+  .mozo-columna-orden {
+    position: relative;  /* saca el sticky si lo tenía */
+    top: 0;
+  }
+
+  .mozo-header {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.5rem;
+  }
+
+  .mozo-header-acciones {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .mozo-header-acciones button {
+    width: 100%;
+  }
+}

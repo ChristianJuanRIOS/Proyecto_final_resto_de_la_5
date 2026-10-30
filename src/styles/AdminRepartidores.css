@@ -1,0 +1,212 @@
+.admin-repartidores {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.admin-repartidores-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.admin-repartidores-header h2 {
+  margin: 0;
+}
+
+.admin-mensaje {
+  background: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+  border-radius: 4px;
+  padding: 0.75rem 1rem;
+  margin-bottom: 1rem;
+}
+
+.admin-mensaje.error {
+  background: #f8d7da;
+  color: #721c24;
+  border-color: #f5c6cb;
+}
+
+.repartidores-tabla {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.repartidores-tabla th,
+.repartidores-tabla td {
+  padding: 0.6rem 0.75rem;
+  text-align: left;
+  border-bottom: 1px solid #eee;
+  font-size: 0.9rem;
+}
+
+.repartidores-tabla th {
+  background: #f7f7f7;
+  font-weight: 600;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  color: #666;
+}
+
+.repartidores-tabla tr.inactivo td {
+  opacity: 0.6;
+}
+
+.repartidores-tabla td.acciones {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.repartidores-tabla td.acciones button {
+  padding: 0.3rem 0.6rem;
+  font-size: 0.8rem;
+  border: 1px solid #ccc;
+  background: white;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.repartidores-tabla td.acciones button:hover {
+  background: #f0f0f0;
+}
+
+.repartidor-estado {
+  display: inline-block;
+  padding: 0.2rem 0.6rem;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.repartidor-estado.activo {
+  background: #d4edda;
+  color: #155724;
+}
+
+.repartidor-estado.inactivo {
+  background: #e2e3e5;
+  color: #6c757d;
+}
+
+.repartidor-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.repartidor-form .campo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.repartidor-form .campo span {
+  font-size: 0.85rem;
+  color: #555;
+  font-weight: 500;
+}
+
+.repartidor-form .campo input {
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 0.95rem;
+}
+
+.repartidor-form .campo-check {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+}
+
+.repartidor-form .campo-check span {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.form-botones {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: flex-end;
+  margin-top: 0.5rem;
+}
+
+.form-botones button[type="button"] {
+  padding: 0.5rem 1rem;
+  border: 1px solid #ccc;
+  background: white;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Dark mode */
+[data-theme="dark"] .repartidores-tabla {
+  background: #2a2a2a;
+}
+
+[data-theme="dark"] .repartidores-tabla th {
+  background: #1f1f1f;
+  color: #aaa;
+  border-bottom-color: #3a3a3a;
+}
+
+[data-theme="dark"] .repartidores-tabla td {
+  color: #e0e0e0;
+  border-bottom-color: #3a3a3a;
+}
+
+[data-theme="dark"] .repartidores-tabla td.acciones button {
+  background: #2a2a2a;
+  color: #e0e0e0;
+  border-color: #555;
+}
+
+[data-theme="dark"] .repartidores-tabla td.acciones button:hover {
+  background: #3a3a3a;
+}
+
+[data-theme="dark"] .repartidor-estado.activo {
+  background: #1c3a28;
+  color: #7ed896;
+}
+
+[data-theme="dark"] .repartidor-estado.inactivo {
+  background: #3a3a3a;
+  color: #999;
+}
+
+[data-theme="dark"] .repartidor-form .campo span,
+[data-theme="dark"] .repartidor-form .campo-check span {
+  color: #ccc;
+}
+
+[data-theme="dark"] .repartidor-form .campo input {
+  background: #1f1f1f;
+  color: #f0f0f0;
+  border-color: #555;
+}
+
+[data-theme="dark"] .form-botones button[type="button"] {
+  background: #2a2a2a;
+  color: #f0f0f0;
+  border-color: #555;
+}
+
+[data-theme="dark"] .admin-mensaje {
+  background: #1c3a28;
+  color: #b4e8c6;
+  border-color: #2a5a3e;
+}
+
+[data-theme="dark"] .admin-mensaje.error {
+  background: #3a1c1c;
+  color: #f5b8bd;
+  border-color: #5a2a2a;
+}

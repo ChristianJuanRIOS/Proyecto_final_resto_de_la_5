@@ -1,0 +1,337 @@
+.pago-resumen {
+  background: #f8f8f8;
+  padding: 1rem;
+  border-radius: 6px;
+  margin-bottom: 1.25rem;
+}
+
+.pago-mesa {
+  font-size: 0.85rem;
+  color: #666;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.pago-items {
+  margin: 0.5rem 0;
+}
+
+.pago-item {
+  display: grid;
+  grid-template-columns: 40px 1fr auto;
+  gap: 0.5rem;
+  padding: 0.25rem 0;
+  font-size: 0.9rem;
+  color: #444;
+}
+
+.pago-item .cantidad {
+  color: #666;
+}
+
+.pago-item .precio {
+  font-variant-numeric: tabular-nums;
+  color: #444;
+}
+
+.pago-total {
+  border-top: 2px solid #ddd;
+  margin-top: 0.75rem;
+  padding-top: 0.5rem;
+  text-align: right;
+  font-size: 1.05rem;
+}
+
+.pago-total-monto {
+  font-size: 1.25rem;
+  color: #0066cc;
+  font-weight: 700;
+  margin-left: 0.5rem;
+}
+
+.pago-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* Antes: grid-template-columns: repeat(3, 1fr); */
+.pago-pasarelas {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);   /* ← 4 columnas en desktop */
+  gap: 0.5rem;
+}
+
+@media (max-width: 480px) {
+  .pago-pasarelas {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.pago-pasarela {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.75rem 0.5rem;
+  border: 2px solid #ddd;
+  border-radius: 6px;
+  cursor: pointer;
+  text-align: center;
+  transition: all 0.15s;
+  background: white;
+}
+
+.pago-pasarela:hover {
+  border-color: #999;
+}
+
+.pago-pasarela.seleccionada {
+  border-color: #0066cc;
+  background: #e6f0ff;
+}
+
+.pago-pasarela i {
+  font-size: 1.5rem;
+  color: #666;
+}
+
+.pago-pasarela.seleccionada i {
+  color: #0066cc;
+}
+
+.pago-pasarela span {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #333;
+}
+
+.pago-pasarela input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.pago-campos {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.pago-campo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.pago-campo span {
+  font-size: 0.85rem;
+  color: #555;
+  font-weight: 500;
+}
+
+.pago-campo input,
+.pago-campo select {
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 0.95rem;
+  background: white;
+}
+
+.pago-campo input:focus,
+.pago-campo select:focus {
+  outline: none;
+  border-color: #0066cc;
+  box-shadow: 0 0 0 2px rgba(0, 102, 204, 0.2);
+}
+
+.pago-doble {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+}
+
+.pago-ayuda {
+  font-size: 0.8rem;
+  color: #666;
+  background: #fff8e1;
+  padding: 0.5rem 0.75rem;
+  border-radius: 4px;
+  border-left: 3px solid #ffc107;
+}
+
+.pago-ayuda code {
+  background: rgba(0,0,0,0.08);
+  padding: 0.05rem 0.35rem;
+  border-radius: 3px;
+  font-size: 0.85rem;
+}
+
+.pago-error {
+  background: #f8d7da;
+  color: #721c24;
+  padding: 0.6rem 0.75rem;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  border-left: 3px solid #dc3545;
+}
+
+.pago-botones {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: flex-end;
+  margin-top: 0.5rem;
+}
+
+.pago-cancelar {
+  background: white;
+  color: #dc3545;
+  border: 1px solid #dc3545;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.pago-cancelar:hover:not(:disabled) {
+  background: #f8d7da;
+}
+
+.pago-cancelar:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Dark mode */
+[data-theme="dark"] .pago-resumen {
+  background: #1f1f1f;
+}
+
+[data-theme="dark"] .pago-mesa {
+  color: #aaa;
+}
+
+[data-theme="dark"] .pago-item {
+  color: #ccc;
+}
+
+[data-theme="dark"] .pago-item .cantidad {
+  color: #999;
+}
+
+[data-theme="dark"] .pago-item .precio {
+  color: #ccc;
+}
+
+[data-theme="dark"] .pago-total {
+  border-top-color: #3a3a3a;
+}
+
+[data-theme="dark"] .pago-total-monto {
+  color: #4a90d9;
+}
+
+[data-theme="dark"] .pago-pasarela {
+  background: #2a2a2a;
+  border-color: #444;
+}
+
+[data-theme="dark"] .pago-pasarela:hover {
+  border-color: #666;
+}
+
+[data-theme="dark"] .pago-pasarela.seleccionada {
+  border-color: #4a90d9;
+  background: #1c2a3e;
+}
+
+[data-theme="dark"] .pago-pasarela i {
+  color: #999;
+}
+
+[data-theme="dark"] .pago-pasarela.seleccionada i {
+  color: #4a90d9;
+}
+
+[data-theme="dark"] .pago-pasarela span {
+  color: #f0f0f0;
+}
+
+[data-theme="dark"] .pago-campo span {
+  color: #ccc;
+}
+
+[data-theme="dark"] .pago-campo input,
+[data-theme="dark"] .pago-campo select {
+  background: #1f1f1f;
+  color: #f0f0f0;
+  border-color: #555;
+}
+
+[data-theme="dark"] .pago-ayuda {
+  background: #3a2f1c;
+  color: #d4b870;
+  border-left-color: #ffc107;
+}
+
+[data-theme="dark"] .pago-ayuda code {
+  background: rgba(255,255,255,0.1);
+}
+
+[data-theme="dark"] .pago-error {
+  background: #3a1c1c;
+  color: #f5b8bd;
+  border-left-color: #dc3545;
+}
+
+[data-theme="dark"] .pago-cancelar {
+  background: #2a2a2a;
+  color: #f5b8bd;
+  border-color: #8a3030;
+}
+
+[data-theme="dark"] .pago-cancelar:hover:not(:disabled) {
+  background: #3a1c1c;
+}
+
+/* Resumen de efectivo (total, recibido, vuelto) */
+.pago-efectivo-resumen {
+  background: #f0f7ff;
+  border-radius: 6px;
+  padding: 0.75rem;
+  margin-top: 0.5rem;
+  border-left: 3px solid #0066cc;
+}
+
+.pago-efectivo-linea {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.25rem 0;
+  font-size: 0.9rem;
+  color: #444;
+}
+
+.pago-efectivo-linea.vuelto {
+  border-top: 2px solid #0066cc;
+  padding-top: 0.5rem;
+  margin-top: 0.25rem;
+  color: #0066cc;
+  font-size: 1rem;
+}
+
+/* Dark mode */
+[data-theme="dark"] .pago-efectivo-resumen {
+  background: #1c2a3e;
+  border-left-color: #4a90d9;
+}
+
+[data-theme="dark"] .pago-efectivo-linea {
+  color: #ccc;
+}
+
+[data-theme="dark"] .pago-efectivo-linea.vuelto {
+  border-top-color: #4a90d9;
+  color: #4a90d9;
+}

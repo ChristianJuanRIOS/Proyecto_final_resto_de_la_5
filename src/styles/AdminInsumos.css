@@ -1,0 +1,423 @@
+.admin-insumos {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.admin-insumos-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.admin-mensaje {
+  background: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+  border-radius: 4px;
+  padding: 0.75rem 1rem;
+  margin-bottom: 1rem;
+}
+
+.admin-mensaje.error {
+  background: #f8d7da;
+  color: #721c24;
+  border-color: #f5c6cb;
+}
+
+.insumos-grid, .recetas-grid {
+  margin-bottom: 2rem;
+}
+
+.insumos-grid h3, .recetas-grid h3 {
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+  color: #333;
+}
+
+.insumos-tabla {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.insumos-tabla th, .insumos-tabla td {
+  padding: 0.6rem 0.75rem;
+  text-align: left;
+  border-bottom: 1px solid #eee;
+}
+
+.insumos-tabla th {
+  background: #f7f7f7;
+  font-weight: 600;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  color: #666;
+}
+
+.insumos-tabla td.numero {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+.insumos-tabla tr.bajo-minimo {
+  background: #fff3cd;
+}
+
+.insumos-tabla tr.bajo-minimo td {
+  color: #856404;
+}
+
+.insumos-tabla td.acciones button {
+  margin-right: 0.5rem;
+  padding: 0.3rem 0.6rem;
+  font-size: 0.8rem;
+  border: 1px solid #ccc;
+  background: white;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.insumos-tabla td.acciones button:hover {
+  background: #f0f0f0;
+}
+
+.recetas-ayuda {
+  font-size: 0.85rem;
+  color: #666;
+  margin-bottom: 1rem;
+}
+
+.recetas-lista {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 0.75rem;
+}
+
+.receta-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0.75rem 1rem;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.15s;
+}
+
+.receta-card:hover {
+  background: #f7f7f7;
+  border-color: #999;
+}
+
+.receta-card-nombre {
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: #333;
+}
+
+.receta-card-cat {
+  font-size: 0.75rem;
+  color: #888;
+  text-transform: uppercase;
+  margin-top: 0.25rem;
+}
+
+/* Forms dentro del Modal */
+.insumo-form .admin-campo {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 0.85rem;
+}
+
+.insumo-form .admin-campo span {
+  font-size: 0.85rem;
+  color: #555;
+  margin-bottom: 0.25rem;
+  font-weight: 500;
+}
+
+.insumo-form input,
+.insumo-form select {
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 0.95rem;
+}
+
+.insumo-form input:focus,
+.insumo-form select:focus {
+  outline: none;
+  border-color: #0066cc;
+  box-shadow: 0 0 0 2px rgba(0, 102, 204, 0.2);
+}
+
+.insumo-form .ayuda {
+  font-size: 0.8rem;
+  color: #666;
+  margin: 0.25rem 0 0.5rem;
+}
+
+.insumo-form .form-botones {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 1.25rem;
+  justify-content: flex-end;
+}
+
+.insumo-form .form-botones button[type="button"] {
+  padding: 0.5rem 1rem;
+  border: 1px solid #ccc;
+  background: white;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.insumo-form .form-botones button[type="button"]:hover {
+  background: #f0f0f0;
+}
+
+.btn-primary {
+  background: #0066cc;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.btn-primary:disabled {
+  background: #99c4e8;
+  cursor: not-allowed;
+}
+
+.receta-form {
+  max-width: 700px;
+}
+
+.receta-insumos-seleccion {
+  margin-bottom: 1rem;
+}
+
+.receta-insumos-botones {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 0.5rem;
+}
+
+.receta-insumos-botones button {
+  padding: 0.3rem 0.6rem;
+  font-size: 0.8rem;
+  background: #f0f0f0;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.receta-insumos-botones button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.receta-tabla {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 0.5rem;
+}
+
+.receta-tabla th, .receta-tabla td {
+  padding: 0.5rem;
+  border-bottom: 1px solid #eee;
+  text-align: left;
+}
+
+.receta-tabla input {
+  width: 100px;
+  padding: 0.3rem;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+/* ---------- MODO OSCURO ---------- */
+
+[data-theme="dark"] .admin-insumos {
+  color: #f0f0f0;
+}
+
+[data-theme="dark"] .admin-insumos-header h2,
+[data-theme="dark"] .insumos-grid h3,
+[data-theme="dark"] .recetas-grid h3 {
+  color: #f0f0f0;
+}
+
+[data-theme="dark"] .admin-mensaje {
+  background: #1c3a28;
+  color: #b4e8c6;
+  border-color: #2a5a3e;
+}
+
+[data-theme="dark"] .admin-mensaje.error {
+  background: #3a1c1c;
+  color: #f5b8bd;
+  border-color: #5a2a2a;
+}
+
+[data-theme="dark"] .insumos-tabla {
+  background: #2a2a2a;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.4);
+}
+
+[data-theme="dark"] .insumos-tabla th {
+  background: #1f1f1f;
+  color: #aaa;
+  border-bottom-color: #3a3a3a;
+}
+
+[data-theme="dark"] .insumos-tabla td {
+  color: #e0e0e0;
+  border-bottom-color: #3a3a3a;
+}
+
+[data-theme="dark"] .insumos-tabla tr.bajo-minimo {
+  background: #4a3a14;
+}
+
+[data-theme="dark"] .insumos-tabla tr.bajo-minimo td {
+  color: #ffd970;
+}
+
+[data-theme="dark"] .insumos-tabla td.acciones button {
+  background: #2a2a2a;
+  color: #e0e0e0;
+  border-color: #444;
+}
+
+[data-theme="dark"] .insumos-tabla td.acciones button:hover {
+  background: #3a3a3a;
+}
+
+[data-theme="dark"] .recetas-ayuda {
+  color: #999;
+}
+
+[data-theme="dark"] .receta-card {
+  background: #2a2a2a;
+  border-color: #444;
+}
+
+[data-theme="dark"] .receta-card:hover {
+  background: #333;
+  border-color: #666;
+}
+
+[data-theme="dark"] .receta-card-nombre {
+  color: #f0f0f0;
+}
+
+[data-theme="dark"] .receta-card-cat {
+  color: #888;
+}
+
+[data-theme="dark"] .insumo-form .form-botones button[type="button"] {
+  background: #2a2a2a;
+  color: #e0e0e0;
+  border-color: #555;
+}
+
+[data-theme="dark"] .insumo-form .form-botones button[type="button"]:hover {
+  background: #3a3a3a;
+}
+
+[data-theme="dark"] .insumo-form input,
+[data-theme="dark"] .insumo-form select {
+  background: #1f1f1f;
+  color: #f0f0f0;
+  border-color: #555;
+}
+
+[data-theme="dark"] .insumo-form input:focus,
+[data-theme="dark"] .insumo-form select:focus {
+  border-color: #4a90d9;
+  box-shadow: 0 0 0 2px rgba(74, 144, 217, 0.3);
+}
+
+[data-theme="dark"] .insumo-form .admin-campo span {
+  color: #ccc;
+}
+
+[data-theme="dark"] .insumo-form .ayuda {
+  color: #aaa;
+}
+
+[data-theme="dark"] .receta-insumos-botones button {
+  background: #333;
+  color: #e0e0e0;
+  border-color: #555;
+}
+
+[data-theme="dark"] .receta-insumos-botones button:hover:not(:disabled) {
+  background: #444;
+}
+
+[data-theme="dark"] .receta-insumos-botones button:disabled {
+  opacity: 0.4;
+}
+
+[data-theme="dark"] .receta-tabla th,
+[data-theme="dark"] .receta-tabla td {
+  color: #e0e0e0;
+  border-bottom-color: #3a3a3a;
+}
+
+[data-theme="dark"] .receta-tabla input {
+  background: #1f1f1f;
+  color: #f0f0f0;
+  border-color: #555;
+}
+
+[data-theme="dark"] .receta-tabla button {
+  background: #2a2a2a;
+  color: #e0e0e0;
+  border-color: #555;
+}
+
+[data-theme="dark"] .receta-tabla button:hover {
+  background: #3a1c1c;
+  color: #f5b8bd;
+}
+
+/* ===== RESPONSIVE (mobile) =====
+   El scroll horizontal lo maneja el wrapper .tabla-scroll
+   que envuelve a la tabla en el JSX. No hace falta transformar
+   la tabla en cards. */
+
+@media (max-width: 768px) {
+  .admin-insumos {
+    padding: 0.5rem;
+  }
+
+  .admin-insumos-header {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.5rem;
+  }
+
+  .admin-insumos-header .btn-primary {
+    width: 100%;
+  }
+
+  .recetas-lista {
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 0.5rem;
+  }
+
+  .receta-card {
+    padding: 0.5rem 0.75rem;
+  }
+}

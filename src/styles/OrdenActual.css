@@ -1,0 +1,66 @@
+.orden-actual {
+  position: sticky;
+  top: 1rem;
+}
+
+@media (max-width: 700px) {
+  .orden-actual {
+    position: static;
+  }
+}
+
+.orden-vacia {
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+}
+
+.orden-items {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.orden-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem 0;
+  border-bottom: 1px dashed var(--color-border);
+  font-size: 0.9rem;
+}
+
+.orden-item span:first-child {
+  flex: 1;
+}
+
+.quitar-btn {
+  background: none;
+  color: var(--color-danger);
+  padding: 0.1rem 0.5rem;
+  font-weight: 700;
+  border-radius: 8px;
+}
+
+.quitar-btn:hover {
+  background-color: var(--color-danger-bg);
+}
+
+.orden-total {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0.75rem;
+  padding-top: 0.6rem;
+  border-top: 2px solid var(--color-border);
+  color: var(--color-primary);
+}
+
+.orden-enviar-btn {
+  width: 100%;
+  margin-top: 1rem;
+  padding: 0.75rem 1rem;
+}
+
+.orden-enviar-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}

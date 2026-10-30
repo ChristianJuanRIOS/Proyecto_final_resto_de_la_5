@@ -1,0 +1,212 @@
+:root {
+  /* Paleta pastel (modo claro) */
+  --color-primary: #5b4637;
+  --color-primary-light: #7a5f4d;
+  --color-accent: #e9a98b;
+  --color-accent-hover: #e29a79;
+  --color-accent-strong: #c9744f;
+  --color-salvia: #bdd1b5;
+  --color-salvia-hover: #aec6a5;
+  --color-rosa: #ecb8bd;
+  --color-rosa-hover: #e5a5ab;
+  --color-rosa-text: #6b3e43;
+  --color-durazno: #f4c6a8;
+
+  --color-bg: #fdf5ec;
+  --color-surface: #fffaf4;
+  --color-border: #ecdccd;
+  --color-text: #4a3a2f;
+  --color-text-muted: #8f7a6b;
+  --color-success: #4f7a4a;
+  --color-success-bg: #e6f0e1;
+  --color-danger: #b4535a;
+  --color-danger-bg: #f9dcdc;
+  --color-danger-border: #f0cfd2;
+
+  --color-input-bg: #fffdfa;
+  --color-hover-bg: #fff3e8;
+  --color-selected-bg: #fde6d6;
+  --color-ocupada-bg: #fbeaec;
+  --color-ocupada-border: #f0cfd2;
+  --color-navbar-bg: rgba(255, 250, 244, 0.85);
+  --color-nav-hover: rgba(244, 198, 168, 0.35);
+
+  --toggle-bg: #fffaf4;
+  --toggle-fg: #5b4637;
+
+  --focus-ring: rgba(233, 169, 139, 0.25);
+  --radius: 14px;
+  --shadow: 0 6px 18px rgba(122, 84, 60, 0.1);
+  --shadow-hover: 0 10px 22px rgba(122, 84, 60, 0.14);
+  --shadow-nav: 0 4px 14px rgba(122, 84, 60, 0.08);
+}
+
+/* Paleta del modo oscuro: marrones cálidos, sin negro puro */
+html[data-theme='dark'] {
+  color-scheme: dark;
+
+  --color-primary: #f6e3d3;
+  --color-primary-light: #d8bfa8;
+  --color-accent-strong: #f0a584;
+
+  --color-bg: #1d1713;
+  --color-surface: #2a221d;
+  --color-border: #44372e;
+  --color-text: #efe3d7;
+  --color-text-muted: #b3a090;
+  --color-success: #a9cf9f;
+  --color-success-bg: #2a3a2a;
+  --color-danger: #f2a0a6;
+  --color-danger-bg: #3d2528;
+  --color-danger-border: #6a4448;
+  --color-rosa-text: #4a2a2e;
+
+  --color-input-bg: #221b17;
+  --color-hover-bg: #372c25;
+  --color-selected-bg: #4a3326;
+  --color-ocupada-bg: #3d2a2d;
+  --color-ocupada-border: #6a4448;
+  --color-navbar-bg: rgba(42, 34, 29, 0.88);
+  --color-nav-hover: rgba(244, 198, 168, 0.14);
+
+  --toggle-bg: #3a2f28;
+  --toggle-fg: #f6c177;
+
+  --focus-ring: rgba(233, 169, 139, 0.3);
+  --shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+  --shadow-hover: 0 10px 22px rgba(0, 0, 0, 0.45);
+  --shadow-nav: 0 4px 14px rgba(0, 0, 0, 0.3);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  color: var(--color-text);
+  background-color: var(--color-bg);
+}
+
+/* Fondo en degradado: dos capas que se funden al cambiar de modo */
+body::before,
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+}
+
+body::before {
+  background: linear-gradient(180deg, #fff3e3 0%, #fbe4d1 100%);
+  opacity: 1;
+}
+
+body::after {
+  background: linear-gradient(180deg, #2a211b 0%, #17110e 100%);
+  opacity: 0;
+}
+
+html[data-theme='dark'] body::before {
+  opacity: 0;
+}
+
+html[data-theme='dark'] body::after {
+  opacity: 1;
+}
+
+/* Mientras se cambia de modo, todo se transiciona suave (menos el botón flotante) */
+html.cambiando-tema *:not(.tema-toggle, .tema-toggle *),
+html.cambiando-tema *:not(.tema-toggle, .tema-toggle *)::before,
+html.cambiando-tema *:not(.tema-toggle, .tema-toggle *)::after {
+  transition:
+    background-color 0.4s ease,
+    color 0.4s ease,
+    border-color 0.4s ease,
+    box-shadow 0.4s ease,
+    opacity 0.4s ease !important;
+}
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.app-content {
+  flex: 1;
+  /* espacio abajo para que el botón flotante no tape el contenido */
+  padding: 1.5rem 1.5rem 5.5rem;
+  max-width: 1100px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+h1, h2, h3 {
+  color: var(--color-primary);
+  margin-top: 0;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  border-radius: 12px;
+  padding: 0.55rem 1.1rem;
+  font-weight: 600;
+  transition: background-color 0.2s, transform 0.1s, box-shadow 0.2s;
+}
+
+button:active:not(:disabled) {
+  transform: scale(0.97);
+}
+
+.btn-primary {
+  background-color: var(--color-accent);
+  color: #4a3428;
+}
+
+.btn-primary:hover {
+  background-color: var(--color-accent-hover);
+}
+
+.btn-accent {
+  background-color: var(--color-salvia);
+  color: #3d5237;
+}
+
+.btn-accent:hover:not(:disabled) {
+  background-color: var(--color-salvia-hover);
+}
+
+.card {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 1.2rem;
+}
+
+/* ---------- Celular ---------- */
+@media (max-width: 600px) {
+  .app-content {
+    padding: 1rem 0.9rem 5.5rem;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html.cambiando-tema *,
+  html.cambiando-tema *::before,
+  html.cambiando-tema *::after,
+  body::before,
+  body::after {
+    transition: none !important;
+  }
+}

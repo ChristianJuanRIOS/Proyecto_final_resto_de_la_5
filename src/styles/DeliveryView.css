@@ -1,0 +1,340 @@
+.delivery-view {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.delivery-view-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.delivery-view-header h2 {
+  margin: 0;
+}
+
+.delivery-filtros {
+  display: flex;
+  gap: 0.25rem;
+  background: #f0f0f0;
+  padding: 0.25rem;
+  border-radius: 6px;
+}
+
+.delivery-filtro {
+  padding: 0.4rem 0.8rem;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  color: #666;
+  font-weight: 500;
+}
+
+.delivery-filtro:hover {
+  color: #333;
+}
+
+.delivery-filtro.activa {
+  background: white;
+  color: #0066cc;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+}
+
+.delivery-mensaje {
+  background: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+  border-radius: 4px;
+  padding: 0.75rem 1rem;
+  margin-bottom: 1rem;
+}
+
+.delivery-mensaje.error {
+  background: #f8d7da;
+  color: #721c24;
+  border-color: #f5c6cb;
+}
+
+.delivery-vacio {
+  padding: 2rem;
+  text-align: center;
+  color: #999;
+  background: #f8f8f8;
+  border-radius: 6px;
+}
+
+.delivery-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+  gap: 1rem;
+}
+
+.delivery-card {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  overflow: hidden;
+  border-left: 4px solid #ccc;
+}
+
+.delivery-card.estado-en_preparacion { border-left-color: #ffc107; }
+.delivery-card.estado-en_camino { border-left-color: #17a2b8; }
+.delivery-card.estado-entregado { border-left-color: #28a745; }
+.delivery-card.estado-cancelado { border-left-color: #dc3545; }
+
+.delivery-card-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid #eee;
+  background: #fafafa;
+  flex-wrap: wrap;
+}
+
+.delivery-card-id {
+  font-weight: 700;
+  color: #333;
+  font-size: 0.95rem;
+}
+
+.delivery-card-estado {
+  padding: 0.2rem 0.6rem;
+  border-radius: 12px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.delivery-card-estado.estado-en_preparacion { background: #fff3cd; color: #856404; }
+.delivery-card-estado.estado-en_camino { background: #d1ecf1; color: #0c5460; }
+.delivery-card-estado.estado-entregado { background: #d4edda; color: #155724; }
+.delivery-card-estado.estado-cancelado { background: #f8d7da; color: #721c24; }
+
+.delivery-card-orden {
+  margin-left: auto;
+  font-size: 0.8rem;
+  color: #888;
+}
+
+.delivery-card-body {
+  padding: 0.75rem 1rem;
+  font-size: 0.88rem;
+}
+
+.delivery-card-row {
+  margin: 0.3rem 0;
+  color: #555;
+}
+
+.delivery-card-row strong {
+  color: #333;
+}
+
+.delivery-card-fecha {
+  color: #999;
+  font-size: 0.75rem;
+  margin-top: 0.5rem;
+}
+
+.delivery-card-acciones {
+  padding: 0.75rem 1rem;
+  border-top: 1px solid #eee;
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5rem;
+}
+
+.delivery-card-pago-pendiente {
+  color: #856404;
+  font-size: 0.85rem;
+  font-style: italic;
+}
+
+.delivery-asignar-info {
+  background: #f8f8f8;
+  padding: 0.75rem;
+  border-radius: 6px;
+  margin-bottom: 1rem;
+}
+
+.delivery-asignar-info p {
+  margin: 0.25rem 0;
+  font-size: 0.9rem;
+}
+
+.delivery-asignar-lista h4 {
+  margin: 0 0 0.5rem;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.delivery-repartidor-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  width: 100%;
+  padding: 0.6rem 0.75rem;
+  margin-bottom: 0.4rem;
+  border: 1px solid #ddd;
+  background: white;
+  border-radius: 4px;
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.15s;
+}
+
+.delivery-repartidor-btn:hover:not(:disabled) {
+  background: #f0f7ff;
+  border-color: #0066cc;
+}
+
+.delivery-repartidor-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.delivery-repartidor-btn i {
+  color: #666;
+  font-size: 1.1rem;
+}
+
+.delivery-repartidor-btn span {
+  flex: 1;
+  font-weight: 500;
+}
+
+.delivery-repartidor-btn small {
+  color: #888;
+  font-size: 0.75rem;
+}
+
+/* Dark mode */
+[data-theme="dark"] .delivery-filtros {
+  background: #1f1f1f;
+}
+
+[data-theme="dark"] .delivery-filtro {
+  color: #aaa;
+}
+
+[data-theme="dark"] .delivery-filtro.activa {
+  background: #2a2a2a;
+  color: #4a90d9;
+}
+
+[data-theme="dark"] .delivery-mensaje {
+  background: #1c3a28;
+  color: #b4e8c6;
+  border-color: #2a5a3e;
+}
+
+[data-theme="dark"] .delivery-mensaje.error {
+  background: #3a1c1c;
+  color: #f5b8bd;
+  border-color: #5a2a2a;
+}
+
+[data-theme="dark"] .delivery-vacio {
+  background: #1f1f1f;
+  color: #888;
+}
+
+[data-theme="dark"] .delivery-card {
+  background: #2a2a2a;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.4);
+}
+
+[data-theme="dark"] .delivery-card-header {
+  background: #1f1f1f;
+  border-bottom-color: #3a3a3a;
+}
+
+[data-theme="dark"] .delivery-card-id {
+  color: #f0f0f0;
+}
+
+[data-theme="dark"] .delivery-card-orden {
+  color: #888;
+}
+
+[data-theme="dark"] .delivery-card-body {
+  color: #ccc;
+}
+
+[data-theme="dark"] .delivery-card-row {
+  color: #aaa;
+}
+
+[data-theme="dark"] .delivery-card-row strong {
+  color: #f0f0f0;
+}
+
+[data-theme="dark"] .delivery-card-fecha {
+  color: #666;
+}
+
+[data-theme="dark"] .delivery-card-acciones {
+  border-top-color: #3a3a3a;
+}
+
+[data-theme="dark"] .delivery-card-pago-pendiente {
+  color: #f5c470;
+}
+
+[data-theme="dark"] .delivery-card-estado.estado-en_preparacion {
+  background: #3a2f1c;
+  color: #f5c470;
+}
+
+[data-theme="dark"] .delivery-card-estado.estado-en_camino {
+  background: #1c2a3a;
+  color: #6db0f5;
+}
+
+[data-theme="dark"] .delivery-card-estado.estado-entregado {
+  background: #1c3a28;
+  color: #7ed896;
+}
+
+[data-theme="dark"] .delivery-card-estado.estado-cancelado {
+  background: #3a1c1c;
+  color: #f5b8bd;
+}
+
+[data-theme="dark"] .delivery-asignar-info {
+  background: #1f1f1f;
+}
+
+[data-theme="dark"] .delivery-asignar-lista h4 {
+  color: #ccc;
+}
+
+[data-theme="dark"] .delivery-repartidor-btn {
+  background: #2a2a2a;
+  border-color: #444;
+}
+
+[data-theme="dark"] .delivery-repartidor-btn:hover:not(:disabled) {
+  background: #1c2a3e;
+  border-color: #4a90d9;
+}
+
+[data-theme="dark"] .delivery-repartidor-btn i {
+  color: #999;
+}
+
+[data-theme="dark"] .delivery-repartidor-btn span {
+  color: #f0f0f0;
+}
+
+[data-theme="dark"] .delivery-repartidor-btn small {
+  color: #888;
+}

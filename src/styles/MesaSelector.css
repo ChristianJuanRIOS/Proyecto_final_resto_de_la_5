@@ -1,0 +1,103 @@
+.mesa-selector {
+  margin-bottom: 1.5rem;
+  padding: 1.2rem;
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.mesa-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 0.75rem;
+}
+
+.mesa-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.mesa-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.2rem;
+  background-color: var(--color-input-bg);
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 0.75rem 0.5rem;
+}
+
+.mesa-btn:hover {
+  border-color: var(--color-durazno);
+  background-color: var(--color-hover-bg);
+}
+
+.mesa-numero {
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+.mesa-capacidad {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+}
+
+.mesa-estado {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+
+.mesa-btn.seleccionada {
+  border-color: var(--color-accent);
+  background-color: var(--color-selected-bg);
+  box-shadow: 0 0 0 3px var(--focus-ring);
+}
+
+.mesa-btn.ocupada {
+  background-color: var(--color-ocupada-bg);
+  border-color: var(--color-ocupada-border);
+}
+
+.mesa-btn.ocupada .mesa-estado {
+  color: var(--color-danger);
+  font-weight: 600;
+}
+
+.mesa-liberar-btn {
+  padding: 0.35rem 0.5rem;
+  font-size: 0.8rem;
+  color: var(--color-rosa-text);
+  background-color: var(--color-rosa);
+  border-radius: 10px;
+}
+
+.mesa-liberar-btn:hover {
+  background-color: var(--color-rosa-hover);
+}
+
+/* Aviso de pedido listo sobre la mesa */
+.mesa-aviso {
+  margin-top: 0.2rem;
+  padding: 0.1rem 0.55rem;
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: #3d5237;
+  background-color: var(--color-salvia);
+  border-radius: 999px;
+  animation: mesa-aviso-pulso 1.6s ease-in-out infinite;
+}
+
+@keyframes mesa-aviso-pulso {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.08); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mesa-aviso {
+    animation: none;
+  }
+}
